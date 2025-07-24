@@ -12,7 +12,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Photography",
+  title: "Ahmed Ragab",
   description: "welcome to our site",
 };
 
