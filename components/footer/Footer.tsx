@@ -19,19 +19,19 @@ const Footer = () => {
             <p className="text-gray-400">{t("capMoment")}</p>
             <div className="flex itemce gap-4">
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/ahmed.ragabph?igsh=YTl3anc2cWwzdHNn"
                 className="hover:text-gray-400 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
               </Link>
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/ahmedragab.photographer"
                 className="hover:text-gray-400 transition-colors"
               >
                 <Facebook className="w-6 h-6" />
               </Link>
               <Link
-                href="mailto:contact@example.com"
+                href="mailto:A.ragab3444@gmail.com"
                 className="hover:text-gray-400 transition-colors"
               >
                 <Mail className="w-6 h-6" />
@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-5 h-5" />
-                <span>ahmedragab@gmail.com</span>
+                <span>A.ragab3444@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />

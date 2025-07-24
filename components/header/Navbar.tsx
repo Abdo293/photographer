@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { createClient } from "@/utils/client";
+import Image from "next/image";
 
 const MenuIcon = ({ isOpen }: any) => (
   <svg
@@ -31,6 +33,25 @@ const MenuIcon = ({ isOpen }: any) => (
 
 export const Navbar = () => {
   const t = useTranslations("navbar");
+  const supabase = createClient();
+  const [isLoading, setIsLoading] = useState(true);
+  const [getImages, setGetImages] = useState<any[]>([]);
+  const locale = useLocale();
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      setIsLoading(true);
+      const { data, error } = await supabase
+        .from("home_content")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (!error) setGetImages(data || []);
+      setIsLoading(false);
+    };
+
+    fetchImages();
+  }, []);
 
   const navItems = [
     { href: "/", label: t("home") },
@@ -62,7 +83,12 @@ export const Navbar = () => {
               href="/"
               className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent"
             >
-              TS
+              <Image
+                src={getImages[0]?.logo}
+                width={50}
+                height={50}
+                alt="logo"
+              />
             </Link>
           </motion.div>
 

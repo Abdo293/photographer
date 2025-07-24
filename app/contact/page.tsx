@@ -40,7 +40,6 @@ const ContactUs = () => {
 
   // Available services - in a real app, fetch from CMS/API
   const services = [
-    { value: "wedding", label: t("wedding") },
     { value: "portrait", label: t("portrait") },
     { value: "corporate", label: t("corporate") },
     { value: "event", label: t("event") },

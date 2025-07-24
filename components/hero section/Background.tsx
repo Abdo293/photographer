@@ -1,9 +1,33 @@
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { createClient } from "@/utils/client";
+import { useEffect, useState } from "react";
 
 export const Background = () => {
   const t = useTranslations("heroSection");
+  const supabase = createClient();
+  const [isLoading, setIsLoading] = useState(true);
+  const [getImages, setGetImages] = useState<any[]>([]);
+  const locale = useLocale();
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      setIsLoading(true);
+      const { data, error } = await supabase
+        .from("home_content")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (!error) setGetImages(data || []);
+      setIsLoading(false);
+    };
+
+    fetchImages();
+  }, []);
+
+  console.log(getImages);
 
   return (
     <div className="relative h-[95vh] overflow-hidden">
@@ -95,7 +119,7 @@ export const Background = () => {
             {/* Main image */}
             <div className="relative w-full h-full z-10">
               <Image
-                src="/profile.webp"
+                src={getImages[0]?.image}
                 fill
                 style={{ objectFit: "contain" }}
                 alt="Professional Photography"

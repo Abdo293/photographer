@@ -41,7 +41,7 @@
     "seeMore": "See More"
   },
   "footer": {
-    "name": "Ahmed Ragab",
+    "name": "Abdelrhman Abuelazm",
     "capMoment": "Capturing moments that last forever",
     "links": "Quick Links",
     "contact": "Contact",
@@ -92,7 +92,10 @@
     "nature": "Nature",
     "loadMore": "Load More",
     "search": "Search...",
-    "caption": "Browse my photography work"
+    "caption": "Browse my photography work",
+    "videos": "Videos",
+    "images": "Images",
+    "noMatching": "No matching results"
   },
   "contactPage": {
     "contact": "Contact Us",
