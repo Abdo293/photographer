@@ -95,7 +95,9 @@
     "caption": "استعرض أعمالي الفوتوغرافية",
     "videos": "الفيديوهات",
     "images": "الصور",
-    "noMatching": "لا توجد نتائج مطابقة"
+    "noMatching": "لا توجد نتائج مطابقة",
+    "viewWork": "مشاهدة الاعمال",
+    "categories": "الاقسام"
   },
   "contactPage": {
     "contact": "اتصل بنا",

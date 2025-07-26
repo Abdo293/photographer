@@ -95,7 +95,9 @@
     "caption": "Browse my photography work",
     "videos": "Videos",
     "images": "Images",
-    "noMatching": "No matching results"
+    "noMatching": "No matching results",
+    "viewWork": "View Work",
+    "categories": "Categories"
   },
   "contactPage": {
     "contact": "Contact Us",
