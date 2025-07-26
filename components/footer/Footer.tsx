@@ -1,12 +1,13 @@
 import React from "react";
 import { Instagram, Mail, Phone, MapPin, Facebook } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const t = useTranslations("footer");
   const n = useTranslations("navbar");
+  const locale = useLocale();
 
   return (
     <footer className="bg-[#151515] text-white">
@@ -15,7 +16,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold">{t("name")}</h2>
+            <h2 className="text-2xl font-bold">
+              {locale === "ar" ? "احمد رجب" : "Ahmed Ragab"}
+            </h2>
             <p className="text-gray-400">{t("capMoment")}</p>
             <div className="flex itemce gap-4">
               <Link

@@ -74,7 +74,7 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100 }}
-      className={`py-4 z-50 w-full transition-all duration-300`}
+      className={`z-50 w-full transition-all duration-300`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
@@ -85,7 +85,7 @@ export const Navbar = () => {
             >
               <Image
                 src={getImages[0]?.logo}
-                width={50}
+                width={120}
                 height={50}
                 alt="logo"
               />
